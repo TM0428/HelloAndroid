@@ -1,52 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="181dp">
+        tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/output_view"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/enter_name"
-            android:textSize="32sp"
-            tools:text="Enter your name" />
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/input_name"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name"
-                android:textSize="32sp" />
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/ok_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="greet"
-                android:text="OK" />
+                <TextView
+                    android:id="@+id/tv_greet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_name"
+                    android:textSize="32sp"
+                    tools:text="Enter your name" />
 
-        </LinearLayout>
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <EditText
+                        android:id="@+id/input_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Name"
+                        android:textSize="32sp" />
+
+                    <Button
+                        android:id="@+id/bt_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="greet"
+                        android:text="@string/bt_ok" />
+
+                    <Button
+                        android:id="@+id/bt_reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/bt_reset" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
